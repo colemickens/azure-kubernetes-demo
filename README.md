@@ -32,20 +32,15 @@ Prerequisites:
 
 1. **Clone `kubernetes-anywhere`**
 
-  Note: This uses 
-  [a private fork of `kubernetes-anywhere`](https://github.com/colemickens/kubernetes-anywhere/tree/azure) 
-  until it is merged in.
-
     ```shell
-    git clone https://github.com/colemickens/kubernetes-anywhere
+    git clone https://github.com/kubernetes/kubernetes-anywhere
     cd kubernetes-anywhere
-    git checkout azure
     ```
 
 2. **Enter the `kubernetes-anywhere` docker environment**
 
     ```shell
-    make docker-dev
+    make env
     ```
 
 3. **Inside the environment, perform the deployment**
