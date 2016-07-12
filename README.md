@@ -40,7 +40,7 @@ Prerequisites:
 2. **Enter the `kubernetes-anywhere` docker environment**
 
     ```shell
-    make env
+    make docker-dev
     ```
 
 3. **Inside the environment, perform the deployment**
