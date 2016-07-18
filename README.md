@@ -51,7 +51,7 @@ Prerequisites:
   ```
   * phase2.docker_registry = "docker.io/colemickens"
   * phase2.kubernetes_version = "v1.4.0-alpha.1-azure"
-  * phase2.installer_container = "docker.io/colemickens/install-k8s:v1"
+  * phase2.installer_container = "docker.io/colemickens/install-k8s:v2"
   ```
 
   Note: you must also have a ServicePrincipal provisioned.
