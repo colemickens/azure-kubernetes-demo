@@ -55,6 +55,7 @@ Prerequisites:
   ```
 
   Note: you must also have a ServicePrincipal provisioned.
+  ([Hashicorp documentation can assist with this process.](https://www.packer.io/docs/builders/azure-setup.html))
   Currently this must have 'Contributor' access to the whole cluster.
   Eventually there will be a helper to create a resource-group-scoped 
   ServicePrincipal. The properties of the ServicePrincipal are needed for
