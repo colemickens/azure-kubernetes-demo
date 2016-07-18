@@ -50,7 +50,7 @@ Prerequisites:
   until it is merged in and the normal repository can be used.
   ```
   * phase2.docker_registry = "docker.io/colemickens"
-  * phase2.kubernetes_version = "v1.4.0-alpha.0-azure"
+  * phase2.kubernetes_version = "v1.4.0-alpha.1-azure"
   * phase2.installer_container = "docker.io/colemickens/install-k8s:v1"
   ```
 
