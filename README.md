@@ -95,9 +95,21 @@ Prerequisites:
 
   Congratulations, you have a Kubernetes cluster!
 
+5. **Deploy addons**
+
+  Currently, `kubernetes-anywhere` does not deploy addons.
+  You will likely want to deploy:
+    * `kube-proxy` as a `DaemonSet`
+    * `kube-dns`
+    * `kubernetes-dashboard`
+
+  The [`polykube` demo documentation](https://github.com/colemickens/polykube/tree/master/DEMO.md)
+  walks though deploying these.
+  Eventually this will be taken care of by `kubernetes-anywhere`.
+
 5. **Deploy an Application**
 
   You're now set to use your cluster.
 
   If you need some inspiration, checkout 
-  [the polykube demo](https://github.com/colemickens/polykube/tree/master/DEMO.md).
+  [the `polykube` demo](https://github.com/colemickens/polykube/tree/master/DEMO.md).
