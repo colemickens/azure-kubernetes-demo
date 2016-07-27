@@ -1,16 +1,12 @@
 # Kubernetes 1.4 on Azure Demo
 
 See [azure-kubernetes-status](https://github.com/colemickens/azure-kubernetes-status)
-for a high-level status of Kubernetes on Azure (including stable releases
-1.2.x and 1.3.x).
+for a high-level status of Kubernetes (1.2.x, 1.3.x, and 1.4.x) on Azure.
 
 ## Overview
 
-This is a preview of things to come. This will use private forks of
-[`kubernetes`](https://github.com/colemickens/kubernetes/tree/azure-cloudprovider) 
-and [`kubernetes-anywhere`](https://github.com/colemickens/kubernetes-anywhere/tree/azure) 
-to deploy a Kubernetes 1.4 cluster into
-Azure. This will have CloudProvider support.
+This is a preview of things to come. This will deploy a private build of Kubernetes until a new
+1.4 alpha is tagged and released. This private build includes the Azure CloudProvider support.
 
 Note that 1.4 is currently in **alpha** and will not be stable until 
 September 2016.
@@ -45,21 +41,25 @@ Prerequisites:
 
 3. **Inside the environment, perform the deployment**
 
-  Note: to perform the deployment, you must do the following things.
-  This will use [a private fork of `kubernetes`](https://github.com/colemickens/kubernetes/tree/azure-cloudprovider) 
-  until it is merged in and the normal repository can be used.
+  This will start the wizard/menu and then start the deployment:
+
+  ```shell
+  make deploy
+  ```
+
+  NOTE: To properly boot a cluster in Azure, you MUST set these values in the wizard:
+  As mentioned earlier, this still uses my private `hyperkube` container until a new 1.4 alpha release is tagged.
+
   ```
   * phase2.docker_registry = "docker.io/colemickens"
   * phase2.kubernetes_version = "v1.4.0-alpha.1-azure"
   * phase2.installer_container = "docker.io/colemickens/install-k8s:v2"
   ```
 
-  Note: you must also have a ServicePrincipal provisioned.
+  NOTE: You must also have a Azure Active Directory ServicePrincipal provisioned ahead of time.
   ([Hashicorp documentation can assist with this process.](https://www.packer.io/docs/builders/azure-setup.html))
-  Currently this must have 'Contributor' access to the whole cluster.
-  Eventually there will be a helper to create a resource-group-scoped 
-  ServicePrincipal. The properties of the ServicePrincipal are needed for
-  these options:
+  Currently, this must have 'Contributor' access to the resource group you're deploying to (the specified `deployment_name`).
+  The details of the ServicePrincipal are needed for these options:
   ```
   * phase1.azure.tenant_id = "[account tenant_id]"
   * phase1.azure.subscription_id = "[account subscription_id]"
@@ -67,11 +67,6 @@ Prerequisites:
   * phase1.azure.client_secret = "[serviceprincipal client_secret]"
   ```
 
-  If you're ready...
-
-    ```shell
-    make deploy
-    ```
 
 4. **Get the status of your nodes**
 
