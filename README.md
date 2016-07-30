@@ -5,15 +5,13 @@ for a high-level status of Kubernetes (1.2.x, 1.3.x, and 1.4.x) on Azure.
 
 ## Overview
 
-This is a preview of things to come. This will deploy a private build of Kubernetes until a new
-1.4 alpha is tagged and released. This private build includes the Azure CloudProvider support.
+This is a test of the native Azure CloudProvider support that is landing in Kubernetes 1.4.
+Kubernetes 1.4 is currently slated for release in September 2016.
 
-Note that 1.4 is currently in **alpha** and will not be stable until 
-September 2016.
-
-At the end, you can go to 
-[polykube's demo](https://github.com/colemickens/polykube/tree/master/DEMO.md) 
-to see a full .NET application deployed as well.
+After deploying a cluster using this guide, you can visit
+[the demo for polykube](https://github.com/colemickens/polykube/tree/master/DEMO.md)
+to see a full .NET application deployed as well, complete with automatically provisioned
+SSL.
 
 
 ## Preparation
@@ -48,11 +46,10 @@ Prerequisites:
   ```
 
   NOTE: To properly boot a cluster in Azure, you MUST set these values in the wizard:
-  As mentioned earlier, this still uses my private `hyperkube` container until a new 1.4 alpha release is tagged.
 
   ```
-  * phase2.docker_registry = "docker.io/colemickens"
-  * phase2.kubernetes_version = "v1.4.0-alpha.1-azure"
+  * phase2.docker_registry = "gcr.io/google_containers"
+  * phase2.kubernetes_version = "v1.4.0-alpha.2"
   * phase2.installer_container = "docker.io/colemickens/install-k8s:v2"
   ```
 
@@ -70,7 +67,7 @@ Prerequisites:
 
 4. **Get the status of your nodes**
 
-  You can access your cluster from your host machine whenever the cluster is 
+  You can access your cluster from your host machine whenever the cluster is
   finished deploying. (This will take some time after the Terraform provisioning
   finishes.)
 
@@ -111,5 +108,5 @@ Prerequisites:
 
   You're now set to use your cluster.
 
-  If you need some inspiration, checkout 
+  If you need some inspiration, checkout
   [the `polykube` demo](https://github.com/colemickens/polykube/tree/master/DEMO.md).
