@@ -50,7 +50,7 @@ Prerequisites:
   ```
   * phase2.docker_registry = "gcr.io/google_containers"
   * phase2.kubernetes_version = "v1.4.0-alpha.2"
-  * phase2.installer_container = "docker.io/colemickens/install-k8s:v2"
+  * phase2.installer_container = "docker.io/colemickens/k8s-ignition:latest"
   ```
 
   NOTE: You must also have a Azure Active Directory ServicePrincipal provisioned ahead of time.
