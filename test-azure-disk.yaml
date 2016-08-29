@@ -1,16 +1,17 @@
 ---
 kind: Service
 apiVersion: v1
-metadata: 
- name: test-azure-disk
-spec: 
- selector: 
-  app: test-azure-disk
- ports: 
+metadata:
+  name: test-azure-disk
+spec:
+  selector:
+    app: test-azure-disk
+  ports:
   - name: web
     protocol: TCP
     port: 80
     targetPort: 80
+  type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
