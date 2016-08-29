@@ -28,6 +28,14 @@ The [yaml file that will be deployed](./test-azure-disk.yaml) demonstrates some 
 
 Follow the instructions in the `kubernetes-anywhere` project to deploy a cluster: https://github.com/kubernetes/kubernetes-anywhere/tree/master/phase1/azure/README.md.
 
+**NOTE:** You absolutely must ensure that you choose the following option during the cluster creation:
+
+```shell
+phase2.kubernetes_version = v1.4.0-alpha.3
+```
+
+(There is a PR open to update the `kubernetes-anywhere` Azure README with that information)
+
 ## Create a VHD Disk
 
 1. Use the `azure-tools` container to create an ext4-formatted VHD in an Azure storage account:
