@@ -7,7 +7,7 @@ for a high-level status of Kubernetes (1.3.x, and 1.4.x) on Azure.
 ## Demo Overview
 This demonstrates:
  * Native Azure Cloudprovider support (automatic pod networking, automatic L4 load balancers)
- * AzureDisk persistent storage plugin
+ * AzureDisk persistent storage plugin (Thanks to [Huamin Chen](https://github.com/rootfs)!)
 
 ## Demo Features
 The [yaml file that will be deployed](./test-azure-disk.yaml) demonstrates some core Kubernetes functionality:
