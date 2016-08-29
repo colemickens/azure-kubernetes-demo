@@ -18,7 +18,11 @@ The [yaml file that will be deployed](./test-azure-disk.yaml) demonstrates some 
   * Two containers, sharing a volume mount
   * The volume mount being backed by an Azure Disk
   * One busybox container appending a timestamp to a file on the volume mount
-  * One busybox container serving the file on the volume mount to port 80 over HTTP
+  * One busybox container serving the file on the volume mount over HTTP on port 80
+
+## Requirements
+
+* `kubectl` (v1.4.0-alpha.3 or newer) [(linux/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-alpha.3/bin/linux/amd64/kubectl) [(darwin/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-alpha.3/bin/darwin/amd64/kubectl)
 
 ## Deploy a Cluster
 
