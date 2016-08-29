@@ -62,7 +62,7 @@ Follow the instructions in the `kubernetes-anywhere` project to deploy a cluster
 2. Edit in the VHD_URL:
    ```shell
    export VHD_URL=https://colemickvhds2.blob.core.windows.net/colemickvhds2/data-disk-082916103645.vhd
-   sed -i "s/VHD_URL/${VHD_URL}/g" ./test-azure-disk.yaml
+   sed -i "s|VHD_URL|${VHD_URL}|g" ./test-azure-disk.yaml
    ```
    (or you can simply do this by hand...)
 
