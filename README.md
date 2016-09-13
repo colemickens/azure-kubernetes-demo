@@ -22,16 +22,16 @@ The [yaml file that will be deployed](./test-azure-disk.yaml) demonstrates some 
 
 ## Requirements
 
-* `kubectl` (v1.4.0-beta.2 or newer) [(linux/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.2/bin/linux/amd64/kubectl) [(darwin/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.2/bin/darwin/amd64/kubectl)
+* `kubectl` (v1.4.0-beta.3 or newer) [(linux/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.3/bin/linux/amd64/kubectl) [(darwin/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.3/bin/darwin/amd64/kubectl)
 
 ## Deploy a Cluster
 
 Follow the instructions in the `kubernetes-anywhere` project to deploy a cluster: https://github.com/kubernetes/kubernetes-anywhere/tree/master/phase1/azure/README.md.
 
-**NOTE:** You should ensure that `kubernetes_version` is set to `v1.4.0-beta.2` or newer.
+**NOTE:** You should ensure that `kubernetes_version` is set to `v1.4.0-beta.3` or newer.
 
 ```shell
-phase2.kubernetes_version = v1.4.0-beta.2
+phase2.kubernetes_version = v1.4.0-beta.3
 ```
 
 (There is a PR open to update the `kubernetes-anywhere` Azure README with that information)
