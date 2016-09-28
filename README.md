@@ -66,10 +66,10 @@ phase2.kubernetes_version = v1.4.0
 1. Download [`test-azure-vhd.yaml`](./test-azure-disk.yaml) from this repo:
 
   ```shell
-  wget https://raw.githubusercontent.com/colemickens/azure-kubernetes-demo/pr-azure-demo2.0/test-azure-disk.yaml
+  wget https://raw.githubusercontent.com/colemickens/azure-kubernetes-demo/master/test-azure-disk.yaml
   ```
   
-2. Edit in the VHD_URL:
+2. Edit in the correct `VHD_URL` value:
    ```shell
    export VHD_URL=https://colemickvhds2.blob.core.windows.net/colemickvhds2/data-disk-082916103645.vhd
    sed -i "s|VHD_URL|${VHD_URL}|g" ./test-azure-disk.yaml
