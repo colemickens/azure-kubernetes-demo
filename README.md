@@ -22,19 +22,17 @@ The [yaml file that will be deployed](./test-azure-disk.yaml) demonstrates some 
 
 ## Requirements
 
-* `kubectl` (v1.4.0-beta.3 or newer) [(linux/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.3/bin/linux/amd64/kubectl) [(darwin/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0-beta.3/bin/darwin/amd64/kubectl)
+* `kubectl` (v1.4.0 or newer) [(linux/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0/bin/linux/amd64/kubectl) [(darwin/amd64)](https://storage.googleapis.com/kubernetes-release/release/v1.4.0/bin/darwin/amd64/kubectl)
 
 ## Deploy a Cluster
 
 Follow the instructions in the `kubernetes-anywhere` project to deploy a cluster: https://github.com/kubernetes/kubernetes-anywhere/tree/master/phase1/azure/README.md.
 
-**NOTE:** You should ensure that `kubernetes_version` is set to `v1.4.0-beta.3` or newer.
+**NOTE:** You should ensure that `kubernetes_version` is set to `v1.4.0` or newer.
 
 ```shell
-phase2.kubernetes_version = v1.4.0-beta.3
+phase2.kubernetes_version = v1.4.0
 ```
-
-(There is a PR open to update the `kubernetes-anywhere` Azure README with that information)
 
 ## Create a VHD Disk
 
@@ -45,22 +43,22 @@ phase2.kubernetes_version = v1.4.0-beta.3
     ```bash
     docker pull docker.io/colemickens/azure-tools:latest
     docker run -it docker.io/colemickens/azure-tools:latest
-    
+
     # (inside the container)
-    
+
     export AZURE_SUBSCRIPTION_ID=6f368760-9ad2-4aef-8ff1-fb038d2e75bf
     export AZURE_RESOURCE_GROUP=colemick-vhds2
     export AZURE_STORAGE_ACCOUNT=colemickvhds2
     export AZURE_STORAGE_CONTAINER=colemickvhds2
     export IMAGE_SIZE=10G
-    
+
     ./make-vhd.sh
     # ....
     # ....
     # VHD_URL=https://colemickvhds2.blob.core.windows.net/colemickvhds2/data-disk-082916103645.vhd
     # (end)
     ```
-    
+
     You can leave the `azure-tools` container now.
 
 ## Prove the VHD support works correctly
