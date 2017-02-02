@@ -38,7 +38,7 @@ phase2.kubernetes_version = v1.4.0
 
 1. Use the `azure-tools` container to create an ext4-formatted VHD in an Azure storage account:
 
-    (The script will create everything for you, if missing. It will default to `westus2`.)
+    (The script will create everything for you, if missing.)
 
     ```bash
     docker pull docker.io/colemickens/azure-tools:latest
@@ -51,6 +51,7 @@ phase2.kubernetes_version = v1.4.0
     export AZURE_STORAGE_ACCOUNT=colemickvhds2
     export AZURE_STORAGE_CONTAINER=colemickvhds2
     export IMAGE_SIZE=10G
+    export AZURE_LOCATION=westus2
 
     ./make-vhd.sh
     # ....
